@@ -7,6 +7,10 @@ public abstract class Chars {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public abstract void setValue(String value);
 
     public abstract String getValue();
