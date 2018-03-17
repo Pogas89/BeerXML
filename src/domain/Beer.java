@@ -5,6 +5,7 @@ import java.util.HashSet;
 public class Beer {
     private String identity;
     private String name;
+    private BeerType beerType;
     private AlchoholType alchoholType;
     private String Manufactor;
     private HashSet<Ingridient> ingridients = new HashSet<>();
@@ -24,6 +25,14 @@ public class Beer {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public BeerType getBeerType() {
+        return beerType;
+    }
+
+    public void setBeerType(BeerType beerType) {
+        this.beerType = beerType;
     }
 
     public AlchoholType getAlchoholType() {

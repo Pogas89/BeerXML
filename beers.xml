@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://www.example.org/beers" xsi:schemaLocation="http://www.example.org/vauchers beers.xsd">
+    <beer id="beer1">
+        <name>Warka</name>
+        <type>dark</type>
+        <alchoholType>alchohol</alchoholType>
+        <manufactor>Polska Beers Inc.</manufactor>
+        <ingridients>
+            <water>70</water>
+            <malt>10</malt>
+            <Hop>15</Hop>
+            <sugar>5</sugar>
+        </ingridients>
+        <chars>
+            <spiritAmount>5.0</spiritAmount>
+            <transparency>2</transparency>
+            <filtration>filtred</filtration>
+            <nutritiveValue>1200</nutritiveValue>
+            <bottling>2.5 metal</bottling>
+        </chars>
+    </beer>
+    <beer id="beer2">
+        <name>Beloe zoloto</name>
+        <type>alive</type>
+        <alchoholType>alchohol</alchoholType>
+        <manufactor>Alivaria</manufactor>
+        <ingridients>
+            <water>68</water>
+            <malt>11</malt>
+            <Hop>14</Hop>
+            <sugar>7</sugar>
+        </ingridients>
+        <chars>
+            <spiritAmount>3.8</spiritAmount>
+            <transparency>3</transparency>
+            <filtration>nonfiltred</filtration>
+            <nutritiveValue>1320</nutritiveValue>
+            <bottling>0.9 plastic</bottling>
+        </chars>
+    </beer>
+    <beer id="beer3">
+        <name>Baltica 0</name>
+        <type>ale</type>
+        <alchoholType>nonalchohol</alchoholType>
+        <manufactor>Baltica</manufactor>
+        <ingridients>
+            <water>70</water>
+            <malt>9</malt>
+            <Hop>13</Hop>
+            <sugar>8</sugar>
+        </ingridients>
+        <chars>
+            <spiritAmount>0</spiritAmount>
+            <transparency>1</transparency>
+            <filtration>filtred</filtration>
+            <nutritiveValue>1600</nutritiveValue>
+            <bottling>0.5 glass</bottling>
+        </chars>
+    </beer>
+</beers>

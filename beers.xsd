@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/beers"
+    xmlns:tns="http://www.example.org/beers" elementFormDefault="qualified">
+    <element name="beers">
+        <complexType>
+            <sequence>
+                <element name="beer" maxOccurs="unbounded">
+                    <complexType>
+                        <sequence>
+                            <element name="name" type="string"/>
+                            <element name="type">
+                                <simpleType>
+                                    <restriction base="string">
+                                        <enumeration value="dark"/>
+                                        <enumeration value="ale"/>
+                                        <enumeration value="lager"/>
+                                        <enumeration value="alive"/>
+                                    </restriction>
+                                </simpleType>
+                            </element>
+                            <element name="alchoholType">
+                                <simpleType>
+                                    <restriction base="string">
+                                        <enumeration value="alchohol"/>
+                                        <enumeration value="nonalchohol"/>
+                                    </restriction>
+                                </simpleType>
+                            </element>
+                            <element name="manufactor" type="string"/>
+                            <element name="ingridients">
+                                <complexType>
+                                    <sequence>
+                                        <element name="water">
+                                            <simpleType>
+                                                <restriction base="int"/>
+                                            </simpleType>
+                                        </element>
+                                        <element name="malt">
+                                            <simpleType>
+                                                <restriction base="int"/>
+                                            </simpleType>
+                                        </element>
+                                        <element name="Hop">
+                                            <simpleType>
+                                                <restriction base="int"/>
+                                            </simpleType>
+                                        </element>
+                                        <element name="sugar">
+                                            <simpleType>
+                                                <restriction base="int"/>
+                                            </simpleType>
+                                        </element>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                            <element name="chars">
+                                <complexType>
+                                    <sequence>
+                                        <element name="spiritAmount">
+                                            <simpleType>
+                                                <restriction base="double">
+                                                </restriction>
+                                            </simpleType>
+                                        </element>
+                                        <element name="transparency">
+                                            <simpleType>
+                                                <restriction base="int">
+                                                    <minInclusive value="1"/>
+                                                    <maxExclusive value="4"/>
+                                                </restriction>
+                                            </simpleType>
+                                        </element>
+                                        <element name="filtration">
+                                            <simpleType>
+                                                <restriction base="string">
+                                                    <enumeration value="filtred"/>
+                                                    <enumeration value="nonfiltred"/>
+                                                </restriction>
+                                            </simpleType>
+                                        </element>
+                                        <element name="nutritiveValue">
+                                            <simpleType>
+                                                <restriction base="int"/>
+                                            </simpleType>
+                                        </element>
+                                        <element name="bottling">
+                                            <simpleType>
+                                                <restriction base="string">
+                                                    <pattern value="([0-9]+)(\.)([0-9])+ [A-Za-z]+"/>
+                                                </restriction>
+                                            </simpleType>
+                                        </element>
+                                    </sequence>
+                                </complexType>
+                            </element>
+                        </sequence>
+                        <attribute name="id" use="required">
+                            <simpleType>
+                                <restriction base="ID">
+                                    <pattern value="[a-zA-z0-9_]+"/>
+                                </restriction>
+                            </simpleType>
+                        </attribute>
+                    </complexType>
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+</schema>
