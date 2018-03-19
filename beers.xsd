@@ -57,9 +57,15 @@
                                 <complexType>
                                     <sequence>
                                         <element name="spiritAmount">
+                                            <!--<complexType>
+                                                <simpleContent>
+                                                    <restriction base="double">
+                                                        <attribute name="spiritAmount" use="optional"/>
+                                                    </restriction>
+                                                </simpleContent>
+                                            </complexType>-->
                                             <simpleType>
-                                                <restriction base="double">
-                                                </restriction>
+                                                <restriction base="double"/>
                                             </simpleType>
                                         </element>
                                         <element name="transparency">

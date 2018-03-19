@@ -35,12 +35,20 @@ public class Beer {
         this.beerType = beerType;
     }
 
+    public void setBeerType(String beerType) {
+        this.beerType = BeerType.valueOf(beerType);
+    }
+
     public AlchoholType getAlchoholType() {
         return alchoholType;
     }
 
     public void setAlchoholType(AlchoholType alchoholType) {
         this.alchoholType = alchoholType;
+    }
+
+    public void setAlchoholType(String alchoholType) {
+        this.alchoholType = AlchoholType.valueOf(alchoholType);
     }
 
     public String getManufactor() {
