@@ -1,10 +1,11 @@
 package test;
 
+import comporator.ComporatorByManufacture;
 import domain.Beer;
 import xml.XmlReader;
 import xml.XmlValidator;
 
-import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 
 public class Tester {
@@ -13,6 +14,7 @@ public class Tester {
         if (xmlValidator.validate()) {
             XmlReader xmlReader = new XmlReader();
             List<Beer> beers = xmlReader.readXml("beers.xml");
+            Collections.sort(beers, new ComporatorByManufacture());
             for (Beer b:beers) {
                 System.out.println(b);
             }

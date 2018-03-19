@@ -51,7 +51,6 @@
             <sugar>8</sugar>
         </ingridients>
         <chars>
-            <spiritAmount>0</spiritAmount>
             <transparency>1</transparency>
             <filtration>filtred</filtration>
             <nutritiveValue>1600</nutritiveValue>

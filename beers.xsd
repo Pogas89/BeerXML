@@ -56,7 +56,7 @@
                             <element name="chars">
                                 <complexType>
                                     <sequence>
-                                        <element name="spiritAmount">
+                                        <element name="spiritAmount" minOccurs="0">
                                             <!--<complexType>
                                                 <simpleContent>
                                                     <restriction base="double">
