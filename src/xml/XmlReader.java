@@ -11,7 +11,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Maid to read from xml file
+ */
 public class XmlReader {
+    /**
+     * Method to read from xml
+     * @see Beer
+     * @param xmlFileName path to xml file
+     * @return list of beer objects
+     */
     public List<Beer> readXml(String xmlFileName) {
         XMLStreamReader xmlStreamReader = null;
         try {

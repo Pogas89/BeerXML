@@ -14,11 +14,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Maid to validate xml file by xsd file
+ */
 public class XmlValidator extends DefaultHandler {
     private String xmlFileName;
     private String xsdFileName;
     List<Exception> exceptions = new ArrayList<>();
 
+    /**
+     *
+     * @param xmlFileName path to xml file
+     * @param xsdFileName path to xsd file
+     */
     public XmlValidator(String xmlFileName, String xsdFileName) {
         this.xmlFileName = xmlFileName;
         this.xsdFileName = xsdFileName;
@@ -46,6 +54,10 @@ public class XmlValidator extends DefaultHandler {
         return null;
     }
 
+    /**
+     * validate xml file by xsd file
+     * @return boolean value of validation xml by xsd
+     */
     public boolean validate() {
         try {
             Validator validator = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI).

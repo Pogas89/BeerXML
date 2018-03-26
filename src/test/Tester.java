@@ -14,6 +14,7 @@ public class Tester {
         if (xmlValidator.validate()) {
             XmlReader xmlReader = new XmlReader();
             List<Beer> beers = xmlReader.readXml("beers.xml");
+            System.out.println("Sorted by Manufactor\n");
             Collections.sort(beers, new ComporatorByManufacture());
             for (Beer b:beers) {
                 System.out.println(b);

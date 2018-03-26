@@ -2,6 +2,10 @@ package domain;
 
 import java.util.HashSet;
 
+/**
+ * Beer objcet that contains information
+ * about unit of goods
+ */
 public class Beer {
     private String identity;
     private String name;
@@ -72,6 +76,7 @@ public class Beer {
         String str = "";
         str += ("ID: " + getIdentity() + "\n");
         str += ("Name of Beer: " + getName() + "\n");
+        str += ("Beer type: ") + getBeerType() + "\n";
         str += ("Alchoholic or not alchoholic: " + getAlchoholType() + "\n");
         str += ("Manufactor: " + getManufactor() + "\n");
         for (Ingridient ingrid : getIngridients()) {
