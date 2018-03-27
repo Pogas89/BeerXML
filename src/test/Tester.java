@@ -20,7 +20,7 @@ public class Tester {
                 System.out.println(b);
             }
         } else {
-            System.out.println(xmlValidator.getError());
+            System.out.println(xmlValidator.getErrors());
         }
     }
 }

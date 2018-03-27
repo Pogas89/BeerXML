@@ -18,6 +18,7 @@ import java.util.List;
  * Maid to validate xml file by xsd file
  */
 public class XmlValidator extends DefaultHandler {
+    private Boolean valid=true;
     private String xmlFileName;
     private String xsdFileName;
     List<Exception> exceptions = new ArrayList<>();
@@ -35,19 +36,22 @@ public class XmlValidator extends DefaultHandler {
     @Override
     public void warning(SAXParseException e) throws SAXException {
         exceptions.add(e);
+        valid=false;
     }
 
     @Override
     public void error(SAXParseException e) throws SAXException {
         exceptions.add(e);
+        valid=false;
     }
 
     @Override
     public void fatalError(SAXParseException e) throws SAXException {
         exceptions.add(e);
+        valid=false;
     }
 
-    public String getError() {
+    public String getErrors() {
         if (!exceptions.isEmpty()) {
             return exceptions.toString();
         }
@@ -68,7 +72,7 @@ public class XmlValidator extends DefaultHandler {
             } catch (IOException e) {
                 e.getMessage();
             }
-            return (getError() == null);
+            return valid;
         } catch (SAXException ex) {
             exceptions.add(ex);
             return false;
