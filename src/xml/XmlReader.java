@@ -27,6 +27,8 @@ public class XmlReader {
         try {
             List<Beer> beers = new ArrayList<>();
             Beer beer = null;
+            Ingridient ingridient = null;
+            Chars chars = null;
             XMLInputFactory factory = XMLInputFactory.newFactory();
             try {
                 xmlStreamReader = factory.createXMLStreamReader(new FileInputStream(xmlFileName));
@@ -57,66 +59,86 @@ public class XmlReader {
                                     beer.setManufactor(xmlStreamReader.getElementText());
                                     break;
                                 }
+                                case "ingridients":{
+                                    ingridient=new Ingridient();
+                                     break;
+                                }
                                 case "water": {
                                     Water water = new Water();
-                                    water.setValue(xmlStreamReader.getElementText());
-                                    beer.getIngridients().add(water);
+                                    water.setValue(Integer.valueOf(xmlStreamReader.getElementText()));
+                                    ingridient.setWater(water);
                                     break;
                                 }
                                 case "malt": {
                                     Malt malt = new Malt();
-                                    malt.setValue(xmlStreamReader.getElementText());
-                                    beer.getIngridients().add(malt);
+                                    malt.setValue(Integer.valueOf(xmlStreamReader.getElementText()));
+                                    ingridient.setMalt(malt);
                                     break;
                                 }
-                                case "hop": {
+                                case "Hop": {
                                     Hop hop = new Hop();
-                                    hop.setValue(xmlStreamReader.getElementText());
-                                    beer.getIngridients().add(hop);
+                                    hop.setValue(Integer.valueOf(xmlStreamReader.getElementText()));
+                                    ingridient.setHop(hop);
                                     break;
                                 }
                                 case "sugar": {
                                     Sugar sugar = new Sugar();
-                                    sugar.setValue(xmlStreamReader.getElementText());
-                                    beer.getIngridients().add(sugar);
+                                    sugar.setValue(Integer.valueOf(xmlStreamReader.getElementText()));
+                                    ingridient.setSugar(sugar);
+                                    break;
+                                }
+                                case "chars":{
+                                    chars = new Chars();
                                     break;
                                 }
                                 case "spiritAmount": {
                                     SpiritAmount spiritAmount = new SpiritAmount();
-                                    spiritAmount.setValue(xmlStreamReader.getElementText());
-                                    beer.getChars().add(spiritAmount);
+                                    spiritAmount.setValue(Double.valueOf(xmlStreamReader.getElementText()));
+                                    chars.setSpiritAmount(spiritAmount);
                                     break;
                                 }
                                 case "filtration": {
                                     Filtration filtration = new Filtration();
-                                    filtration.setValue(xmlStreamReader.getElementText());
-                                    beer.getChars().add(filtration);
+                                    filtration.setFiltration(FiltrationType.valueOf(xmlStreamReader.getElementText()));
+                                    chars.setFiltration(filtration);
                                     break;
                                 }
                                 case "transparency": {
                                     Transparency transparency = new Transparency();
-                                    transparency.setValue(xmlStreamReader.getElementText());
-                                    beer.getChars().add(transparency);
+                                    transparency.setValue(Integer.valueOf(xmlStreamReader.getElementText()));
+                                    chars.setTransparency(transparency);
                                     break;
                                 }
                                 case "nutritiveValue": {
                                     NutritiveValue nutritiveValue = new NutritiveValue();
-                                    nutritiveValue.setValue(xmlStreamReader.getElementText());
-                                    beer.getChars().add(nutritiveValue);
+                                    nutritiveValue.setValue(Integer.valueOf(xmlStreamReader.getElementText()));
+                                    chars.setNutritiveValue(nutritiveValue);
                                     break;
                                 }
                                 case "bottling": {
                                     Bottling bottling = new Bottling();
                                     bottling.setValue(xmlStreamReader.getElementText());
-                                    beer.getChars().add(bottling);
+                                    chars.setBottling(bottling);
                                     break;
                                 }
                             }
+                            break;
                         }
                         case XMLStreamConstants.END_ELEMENT: {
                             String tName = xmlStreamReader.getLocalName();
-                            if ("beer".equalsIgnoreCase(tName)) {
-                                beers.add(beer);
+                            switch (tName) {
+                                case "beer": {
+                                    beers.add(beer);
+                                    break;
+                                }
+                                case "ingridients": {
+                                    beer.setIngridients(ingridient);
+                                    break;
+                                }
+                                case "chars":{
+                                    beer.setChars(chars);
+                                    break;
+                                }
                             }
                             break;
                         }

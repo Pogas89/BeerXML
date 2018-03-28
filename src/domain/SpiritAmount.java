@@ -1,20 +1,18 @@
 package domain;
 
-public class SpiritAmount extends Chars {
+public class SpiritAmount {
 
     private Double value;
 
     public SpiritAmount() {
-        super("Spirit Amount");
+        value=0.;
     }
 
-    @Override
-    public void setValue(String value) {
-        this.value = Double.parseDouble(value);
+    public Double getValue() {
+        return value;
     }
 
-    @Override
-    public String getValue() {
-        return String.valueOf(value);
+    public void setValue(Double value) {
+        this.value = value;
     }
 }

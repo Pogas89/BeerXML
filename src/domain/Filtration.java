@@ -1,20 +1,14 @@
 package domain;
 
-public class Filtration extends Chars{
+public class Filtration {
 
     private FiltrationType filtration;
 
-    public Filtration() {
-        super("Filtration");
+    public FiltrationType getFiltration() {
+        return filtration;
     }
 
-    @Override
-    public void setValue(String value) {
-        filtration = FiltrationType.valueOf(value);
-    }
-
-    @Override
-    public String getValue() {
-        return filtration.toString();
+    public void setFiltration(FiltrationType filtration) {
+        this.filtration = filtration;
     }
 }

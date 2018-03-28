@@ -1,19 +1,13 @@
 package domain;
 
-public class Malt extends Ingridient {
+public class Malt {
     private Integer value;
 
-    public Malt() {
-        super("Malt");
+    public Integer getValue() {
+        return value;
     }
 
-    @Override
-    public void setValue(String value) {
-        this.value = Integer.parseInt(value);
-    }
-
-    @Override
-    public String getValue() {
-        return String.valueOf(value);
+    public void setValue(Integer value) {
+        this.value = value;
     }
 }

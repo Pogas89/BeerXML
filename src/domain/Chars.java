@@ -1,32 +1,60 @@
 package domain;
 
-public abstract class Chars {
-    private String name;
+public class Chars {
+    SpiritAmount spiritAmount = new SpiritAmount();
+    Transparency transparency = new Transparency();
+    Filtration filtration = new Filtration();
+    NutritiveValue nutritiveValue = new NutritiveValue();
+    Bottling bottling = new Bottling();
 
-    public Chars(String name) {
-        this.name = name;
+    public SpiritAmount getSpiritAmount() {
+        return spiritAmount;
     }
 
-    public String getName() {
-        return name;
+    public void setSpiritAmount(SpiritAmount spiritAmount) {
+        this.spiritAmount = spiritAmount;
     }
 
-    public abstract void setValue(String value);
-
-    public abstract String getValue();
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
+    public Transparency getTransparency() {
+        return transparency;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return obj != null && getClass() == obj.getClass();
+    public void setTransparency(Transparency transparency) {
+        this.transparency = transparency;
+    }
+
+    public Filtration getFiltration() {
+        return filtration;
+    }
+
+    public void setFiltration(Filtration filtration) {
+        this.filtration = filtration;
+    }
+
+    public NutritiveValue getNutritiveValue() {
+        return nutritiveValue;
+    }
+
+    public void setNutritiveValue(NutritiveValue nutritiveValue) {
+        this.nutritiveValue = nutritiveValue;
+    }
+
+    public Bottling getBottling() {
+        return bottling;
+    }
+
+    public void setBottling(Bottling bottling) {
+        this.bottling = bottling;
     }
 
     @Override
     public String toString() {
-        return getValue();
+        String str="\n";
+        str +=("\tSpiritAmount: " + spiritAmount.getValue() +"\n");
+        str +=("\tTransparency: " + transparency.getValue() +"\n");
+        str +=("\tFiltration: " + filtration.getFiltration() +"\n");
+        str +=("\tNutritive Value: " + nutritiveValue.getValue() +"\n");
+        str +=("\tBottling: " + bottling.getValue() +"\n");
+        return str;
     }
 }

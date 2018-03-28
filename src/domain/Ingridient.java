@@ -1,32 +1,50 @@
 package domain;
 
-public abstract class Ingridient {
-    private String name;
+public class Ingridient {
+    private Water water = new Water();
+    private Hop hop = new Hop();
+    private Malt malt = new Malt();
+    private Sugar sugar = new Sugar();
 
-    public Ingridient(String name) {
-        this.name = name;
+    public Water getWater() {
+        return water;
     }
 
-    public String getName() {
-        return name;
+    public void setWater(Water water) {
+        this.water = water;
     }
 
-    public abstract void setValue (String value);
-
-    public abstract String getValue();
-
-    @Override
-    public int hashCode() {
-        return getClass().hashCode();
+    public Hop getHop() {
+        return hop;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        return obj != null && getClass() == obj.getClass();
+    public void setHop(Hop hop) {
+        this.hop = hop;
+    }
+
+    public Malt getMalt() {
+        return malt;
+    }
+
+    public void setMalt(Malt malt) {
+        this.malt = malt;
+    }
+
+    public Sugar getSugar() {
+        return sugar;
+    }
+
+    public void setSugar(Sugar sugar) {
+        this.sugar = sugar;
     }
 
     @Override
     public String toString() {
-        return getValue();
+        String str="\n";
+        str+=("\twater=" + water.getValue() + "\n");
+        str +=("\thop=" + hop.getValue() + "\n");
+        str +=("\tmalt=" + malt.getValue() + "\n");
+        str +=("\tsugar=" + sugar.getValue());
+        return str;
     }
 }

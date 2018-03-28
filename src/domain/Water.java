@@ -1,20 +1,14 @@
 package domain;
 
-public class Water extends Ingridient {
+public class Water {
 
     private Integer value;
 
-    public Water() {
-        super("Water");
+    public Integer getValue() {
+        return value;
     }
 
-    @Override
-    public void setValue(String value) {
-        this.value = Integer.parseInt(value);
-    }
-
-    @Override
-    public String getValue() {
-        return String.valueOf(value);
+    public void setValue(Integer value) {
+        this.value = value;
     }
 }

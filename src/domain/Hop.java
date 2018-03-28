@@ -1,19 +1,13 @@
 package domain;
 
-public class Hop extends Ingridient {
+public class Hop {
     private Integer value;
 
-    public Hop() {
-        super("Hop");
+    public Integer getValue() {
+        return value;
     }
 
-    @Override
-    public void setValue(String value) {
-        this.value = Integer.parseInt(value);
-    }
-
-    @Override
-    public String getValue() {
-        return String.valueOf(value);
+    public void setValue(Integer value) {
+        this.value = value;
     }
 }

@@ -1,20 +1,14 @@
 package domain;
 
-public class NutritiveValue extends Chars {
+public class NutritiveValue {
 
     private Integer value;
 
-    public NutritiveValue() {
-        super("Nutritive Value");
+    public Integer getValue() {
+        return value;
     }
 
-    @Override
-    public void setValue(String value) {
-        this.value = Integer.parseInt(value);
-    }
-
-    @Override
-    public String getValue() {
-        return String.valueOf(value);
+    public void setValue(Integer value) {
+        this.value = value;
     }
 }

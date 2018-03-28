@@ -10,6 +10,7 @@ import java.util.List;
 
 public class Tester {
     public static void main(String[] args) {
+        Beer bbb = new Beer();
         XmlValidator xmlValidator = new XmlValidator("beers.xml", "beers.xsd");
         if (xmlValidator.validate()) {
             XmlReader xmlReader = new XmlReader();

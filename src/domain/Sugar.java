@@ -1,19 +1,13 @@
 package domain;
 
-public class Sugar extends Ingridient {
+public class Sugar {
     private Integer value;
 
-    public Sugar() {
-        super("Sugar");
+    public Integer getValue() {
+        return value;
     }
 
-    @Override
-    public void setValue(String value) {
-        this.value = Integer.parseInt(value);
-    }
-
-    @Override
-    public String getValue() {
-        return String.valueOf(value);
+    public void setValue(Integer value) {
+        this.value = value;
     }
 }

@@ -12,8 +12,8 @@ public class Beer {
     private BeerType beerType;
     private AlchoholType alchoholType;
     private String Manufactor;
-    private HashSet<Ingridient> ingridients = new HashSet<>();
-    private HashSet<Chars> chars = new HashSet<>();
+    private Ingridient ingridients = new Ingridient();
+    private Chars chars = new Chars();
 
     public String getIdentity() {
         return identity;
@@ -63,12 +63,20 @@ public class Beer {
         Manufactor = manufactor;
     }
 
-    public HashSet<Ingridient> getIngridients() {
+    public Ingridient getIngridients() {
         return ingridients;
     }
 
-    public HashSet<Chars> getChars() {
+    public void setIngridients(Ingridient ingridients) {
+        this.ingridients = ingridients;
+    }
+
+    public Chars getChars() {
         return chars;
+    }
+
+    public void setChars(Chars chars) {
+        this.chars = chars;
     }
 
     @Override
@@ -79,12 +87,8 @@ public class Beer {
         str += ("Beer type: ") + getBeerType() + "\n";
         str += ("Alchoholic or not alchoholic: " + getAlchoholType() + "\n");
         str += ("Manufactor: " + getManufactor() + "\n");
-        for (Ingridient ingrid : getIngridients()) {
-            str += (ingrid.getName() + ": " + ingrid.getValue()) + "\n";
-        }
-        for (Chars chars : getChars()) {
-            str += (chars.getName() + ": " + chars.getValue()) + "\n";
-        }
+        str += ("Ingridients: " + getIngridients() +"\n");
+        str += ("Characteristics: " + getChars() + "\n");
         return str;
     }
 }

@@ -1,20 +1,14 @@
 package domain;
 
-public class Transparency extends Chars{
+public class Transparency {
 
     Integer value;
 
-    public Transparency() {
-        super("Transparency");
+    public Integer getValue() {
+        return value;
     }
 
-    @Override
-    public void setValue(String value) {
-        this.value = Integer.parseInt(value);
-    }
-
-    @Override
-    public String getValue() {
-        return String.valueOf(value);
+    public void setValue(Integer value) {
+        this.value = value;
     }
 }
